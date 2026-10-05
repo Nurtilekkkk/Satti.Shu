@@ -1220,15 +1220,57 @@ function submitForm(e){
 
   e.preventDefault();
 
-  alert(
-    'Рақмет! Өтініміңіз қабылданды. ' +
-    'Біз сізбен жақын арада хабарласамыз.'
+  const form = e.target;
+
+  const name = form.querySelector(
+    'input[placeholder="Аты-жөніңіз"]'
+  ).value;
+
+  const phone = form.querySelector(
+    'input[type="tel"]'
+  ).value;
+
+  const hall = form.querySelector(
+    'select'
+  ).value;
+
+  const date = form.querySelector(
+    'input[type="date"]'
+  ).value;
+
+  const comment = form.querySelector(
+    'textarea'
+  ).value;
+
+
+  const message =
+    "🔔 ЖАҢА БРОНДАУ%0A%0A" +
+    "👤 Аты-жөні: " + name + "%0A" +
+    "📞 Телефон: " + phone + "%0A" +
+    "🏛 Зал: " + hall + "%0A" +
+    "📅 Күні: " + date + "%0A" +
+    "💬 Қосымша: " + comment;
+
+
+  // ОСЫ ЖЕРГЕ ТОЙХАНАНЫҢ WHATSAPP НОМЕРІН ЖАЗ
+  const whatsappNumber = "87758239005";
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message;
+
+
+  window.open(
+    whatsappURL,
+    "_blank"
   );
 
   closeModal();
 
-  e.target.reset();
-
+  form.reset();
 }
 
 </script>
