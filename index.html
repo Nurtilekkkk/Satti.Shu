@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sätti — Тойхана кешені</title>
+
+<meta name="description"
+content="Sätti тойхана кешені — ерекше сәттеріңізге арналған сәнді залдар мен жоғары деңгейдегі қызмет.">
+
+<style>
+:root{
+  --black:#12110f;
+  --black2:#1a1815;
+  --cream:#f7f2e8;
+  --gold:#d8b77a;
+  --gold2:#b99454;
+  --text:#2b2823;
+  --muted:#746e63;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.55;
+}
+
+h1,h2,h3{
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  line-height:1.05;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  z-index:50;
+  top:0;
+  left:0;
+  right:0;
+  background:rgba(18,17,15,.94);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.logo{
+  font-family:Georgia,serif;
+  color:#ead4a7;
+  font-size:30px;
+  font-style:italic;
+  white-space:nowrap;
+}
+
+.logo small{
+  display:block;
+  font-family:Arial;
+  font-size:8px;
+  letter-spacing:4px;
+  text-align:center;
+  color:#c8b58e;
+  font-style:normal;
+}
+
+nav{
+  display:flex;
+  gap:28px;
+  color:#e9e1d3;
+  font-size:13px;
+}
+
+nav a{
+  opacity:.88;
+  transition:.2s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+.phone{
+  background:var(--gold);
+  color:#201b14;
+  border-radius:30px;
+  padding:12px 20px;
+  font-weight:700;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:#fff;
+  font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:690px;
+  background:var(--black);
+  color:white;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10,9,8,.98) 0%,
+      rgba(10,9,8,.84) 34%,
+      rgba(10,9,8,.18) 70%,
+      rgba(10,9,8,.58) 100%
+    ),
+    url("assets/hero.jpg") center/cover no-repeat;
+  filter:saturate(.85);
+}
+
+.hero-content{
+  position:relative;
+  padding-top:70px;
+  max-width:620px;
+}
+
+.kicker{
+  font-size:11px;
+  letter-spacing:5px;
+  color:#d8bf91;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(48px,7vw,82px);
+  margin-bottom:24px;
+}
+
+.hero h1 em{
+  color:#e0bf87;
+}
+
+.hero p{
+  max-width:470px;
+  color:#d7d0c4;
+  font-size:16px;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:20px;
+  background:var(--gold);
+  color:#211c15;
+  border:0;
+  border-radius:28px;
+  padding:14px 24px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.btn.outline{
+  background:transparent;
+  color:#eee;
+  border:1px solid var(--gold2);
+}
+
+.hero-note{
+  position:absolute;
+  right:5%;
+  bottom:40px;
+  font-family:Georgia,serif;
+  font-style:italic;
+  color:#e2c796;
+  font-size:20px;
+  transform:rotate(-5deg);
+}
+
+.dots{
+  display:flex;
+  gap:7px;
+  margin-top:34px;
+}
+
+.dots i{
+  width:8px;
+  height:3px;
+  border-radius:3px;
+  background:#746b5d;
+}
+
+.dots i:first-child{
+  width:25px;
+  background:var(--gold);
+}
+
+/* ABOUT */
+
+.about{
+  padding:95px 0;
+  background:#fbf8f1;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.photo{
+  overflow:hidden;
+  border-radius:0 45px 45px 45px;
+  min-height:390px;
+  background:#ddd;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.section-label{
+  font-size:10px;
+  letter-spacing:5px;
+  color:#b3955e;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:clamp(38px,4vw,58px);
+  margin-bottom:22px;
+}
+
+.about-copy p{
+  color:var(--muted);
+  max-width:540px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:38px;
+}
+
+.feature{
+  font-size:13px;
+  color:#484238;
+}
+.icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#f5ecdb;
+  display:grid;
+  place-items:center;
+  color:#b18b50;
+  font-size:22px;
+  margin-bottom:12px;
+}
+/* HALLS */
+
+.halls{
+  background:var(--black);
+  color:#fff;
+  padding:95px 0;
+}
+
+.halls-grid{
+  display:grid;
+  grid-template-columns:290px 1fr;
+  gap:60px;
+  align-items:start;
+}
+
+.halls-copy p{
+  color:#aaa297;
+  font-size:14px;
+  margin:25px 0 28px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  height:320px;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #5b4b34;
+  background:#222;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.8;
+  transition:.35s;
+}
+
+.card:hover img{
+  transform:scale(1.05);
+  opacity:1;
+}
+
+.card:after{
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(
+    transparent,
+    rgba(0,0,0,.9)
+  );
+}
+
+.card-info{
+  position:absolute;
+  z-index:2;
+  left:20px;
+  right:20px;
+  bottom:18px;
+}
+
+.card-info h3{
+  font-size:22px;
+}
+
+.card-info span{
+  font-size:12px;
+  color:#d1c8bb;
+}
+
+/* SERVICES */
+
+.services{
+  padding:80px 0;
+  background:#faf7ef;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1.2fr 2.8fr;
+  gap:50px;
+  align-items:center;
+}
+
+.service-list{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+}
+
+.service{
+  text-align:center;
+  padding:25px 10px;
+}
+
+.service .icon{
+  margin:0 auto 13px;
+}
+
+.service b{
+  font-size:12px;
+  font-weight:500;
+}
+
+/* CTA */
+
+.cta{
+  padding:70px 0;
+  background:linear-gradient(
+    120deg,
+    #171511,
+    #282219
+  );
+  color:#fff;
+  text-align:center;
+}
+
+.cta p{
+  color:#bcb4a8;
+  margin:15px auto 25px;
+  max-width:600px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#11100e;
+  color:#aaa;
+  padding:42px 0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:30px;
+}
+
+footer .logo{
+  margin-bottom:15px;
+}
+
+footer h4{
+  color:#ead9b7;
+  margin-bottom:14px;
+  font-size:13px;
+}
+
+footer p,
+footer a{
+  font-size:12px;
+  color:#8e897f;
+  display:block;
+  margin:5px 0;
+}
+
+.copyright{
+  border-top:1px solid #292723;
+  margin-top:30px;
+  padding-top:18px;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+}
+
+/* MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  place-items:center;
+  z-index:100;
+  padding:20px;
+}
+
+.modal.open{
+  display:grid;
+}
+
+.modal-box{
+  background:#faf7ef;
+  width:min(500px,100%);
+  border-radius:20px;
+  padding:35px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:14px;
+  border:0;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+form{
+  display:grid;
+  gap:12px;
+  margin-top:20px;
+}
+
+input,
+select,
+textarea{
+  padding:13px;
+  border:1px solid #d8cfbf;
+  border-radius:10px;
+  background:white;
+  font:inherit;
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+  nav{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .phone{
+    display:none;
+  }
+
+  .hero{
+    min-height:620px;
+  }
+
+  .about-grid,
+  .halls-grid,
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .features{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .service-list{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+/* PHONE */
+
+@media(max-width:560px){
+
+  .nav{
+    height:66px;
+  }
+
+  .hero-content{
+    padding-top:60px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .features,
+  .service-list,
+  .cards,
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .photo{
+    min-height:300px;
+  }
+
+  .halls{
+    padding:65px 0;
+  }
+
+  .about{
+    padding:65px 0;
+  }
+
+  .copyright{
+    flex-direction:column;
+    gap:8px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+
+  <div class="container nav">
+
+    <a href="#" class="logo">
+      Sätti
+      <small>ТОЙХАНА КЕШЕНІ</small>
+    </a>
+
+    <nav>
+      <a href="#home">Басты бет</a>
+      <a href="#about">Біз туралы</a>
+      <a href="#halls">Залдар</a>
+      <a href="#services">Қызметтер</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contact">Байланыс</a>
+    </nav>
+
+    <a class="phone" href="tel:+77001234567">
+      ☎ +7 700 123 45 67
+    </a>
+
+    <button class="menu" aria-label="menu">
+      ☰
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="container hero-content">
+
+    <div class="kicker">
+      Тойхана кешені
+    </div>
+
+    <h1>
+      Ерекше сәттер<br>
+      <em>Sätti-де!</em>
+    </h1>
+
+    <p>
+      Сіздің қуанышты сәттеріңіз — біздің кәсібіміз.
+      Заманауи интерьер, кең залдар және жоғары деңгейдегі қызмет.
+    </p>
+
+    <button class="btn" onclick="openModal()">
+      Брондау
+      <span>→</span>
+    </button>
+
+    <div class="dots">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+
+  </div>
+
+  <div class="hero-note">
+    Әр той —<br>
+    бір тарих...
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+  <div class="container about-grid">
+
+    <div class="photo">
+
+      <img
+        src="assets/hall-main.jpg"
+        alt="Sätti банкет залы"
+      >
+
+    </div>
+
+
+    <div class="about-copy">
+
+      <div class="section-label">
+        БІЗ ТУРАЛЫ
+      </div>
+
+      <h2>
+        Сапа мен сұлулық<br>
+        бір жерде
+      </h2>
+
+      <p>
+        «Sätti» тойханасы — той, мереке,
+        қонақ күту және басқа да салтанатты
+        шараларды жоғары деңгейде өткізуге
+        арналған заманауи кешен.
+        Біз сіздің әрбір қадамыңызды
+        ерекше етуге тырысамыз.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <div class="icon">⌂</div>
+          Кең, жайлы залдар
+        </div>
+
+        <div class="feature">
+          <div class="icon">◇</div>
+          Заманауи интерьер
+        </div>
+
+        <div class="feature">
+          <div class="icon">✿</div>
+          Сапалы қызмет
+        </div>
+
+        <div class="feature">
+          <div class="icon">♧</div>
+          Тәжірибелі ұйымдастырушылар
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HALLS -->
+
+<section class="halls" id="halls">
+
+  <div class="container halls-grid">
+
+    <div class="halls-copy">
+
+      <div class="section-label">
+        БІЗДІҢ ЗАЛДАР
+      </div>
+
+      <h2>
+        Әр салтанатқа<br>
+        арналған кеңістік
+      </h2>
+
+      <p>
+        Біздің залдар әртүрлі форматтағы
+        тойлар мен мерекелерге лайықталған.
+        Әр залдың өзіндік ерекшелігі мен
+        ерекше атмосферасы бар.
+      </p>
+
+      <a
+        class="btn outline"
+        href="#gallery"
+      >
+        Залдарды қарау →
+      </a>
+
+    </div>
+
+
+    <div class="cards" id="gallery">
+
+      <article class="card">
+
+        <img
+          src="assets/hall-entrance.jpg"
+          alt="Кіреберіс"
+        >
+
+        <div class="card-info">
+
+          <h3>
+            Кіреберіс
+          </h3>
+
+          <span>
+            Стиль мен сән
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <img
+          src="assets/hall-main-2.jpg"
+          alt="Негізгі зал"
+        >
+
+        <div class="card-info">
+
+          <h3>
+            Негізгі зал
+          </h3>
+
+          <span>
+            Кең және сәнді
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <article class="card">
+
+        <img
+          src="assets/stage.jpg"
+          alt="Сахна"
+        >
+
+        <div class="card-info">
+
+          <h3>
+            Сахна
+          </h3>
+
+          <span>
+            Салтанатты сәттер
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+  <div class="container service-grid">
+
+    <div>
+
+      <div class="section-label">
+        ҚЫЗМЕТТЕР
+      </div>
+<h2>
+        Біз ұсынатын<br>
+        қызметтер
+      </h2>
+
+      <p style="color:#746e63">
+        Сізге тек мереке емес,
+        есте қаларлық сәт сыйлаймыз.
+      </p>
+
+    </div>
+
+
+    <div class="service-list">
+
+      <div class="service">
+
+        <div class="icon">
+          ◯
+        </div>
+
+        <b>
+          Той өткізу
+        </b>
+
+        <small>
+          (той, бесік той, мерейтой)
+        </small>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">
+          ♧
+        </div>
+
+        <b>
+          Кездесу және корпоратив
+        </b>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">
+          ✿
+        </div>
+
+        <b>
+          Сәнді безендіру
+        </b>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">
+          ⌁
+        </div>
+
+        <b>
+          Фуршет және банкет мәзірі
+        </b>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">
+          ▱
+        </div>
+
+        <b>
+          Парковка және қауіпсіздік
+        </b>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="cta" id="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      БРОНДАУ
+    </div>
+
+    <h2>
+      Сіздің қуанышыңыз —
+      біздің миссиямыз
+    </h2>
+
+    <p>
+      Күніңізді бірге жоспарлайық.
+      Залдың бос уақытын біліп,
+      брондау үшін бізге хабарласыңыз.
+    </p>
+
+    <button
+      class="btn"
+      onclick="openModal()"
+    >
+      Брондау →
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <div class="logo">
+
+          Sätti
+
+          <small>
+            ТОЙХАНА КЕШЕНІ
+          </small>
+
+        </div>
+
+        <p>
+          Сіздің қуанышыңыз —
+          біздің миссиямыз
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Байланыс
+        </h4>
+
+        <a href="tel:+77001234567">
+          +7 700 123 45 67
+        </a>
+
+        <a href="mailto:satti.toihana@gmail.com">
+          satti.toihana@gmail.com
+        </a>
+
+        <p>
+          ҚР, Алматы қ.,
+          Абылай хан к-сі 123
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Әлеуметтік желілер
+        </h4>
+
+        <p>
+          Instagram · TikTok ·
+          WhatsApp · Telegram
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h4>
+          Жұмыс уақыты
+        </h4>
+
+        <p>
+          Күн сайын:
+          10:00 — 23:00
+        </p>
+
+        <button
+          class="btn"
+          onclick="openModal()"
+        >
+          Брондау →
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      <span>
+        © 2026 Sätti.
+        Барлық құқық қорғалған.
+      </span>
+
+      <span>
+        Сайт дизайны: Sätti Team
+      </span>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- BOOKING MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+
+    <button
+      class="close"
+      onclick="closeModal()"
+    >
+      ×
+    </button>
+
+    <div class="section-label">
+      БРОНДАУ
+    </div>
+
+    <h2 style="font-size:36px">
+      Залды брондау
+    </h2>
+
+
+    <form onsubmit="submitForm(event)">
+
+      <input
+        required
+        placeholder="Аты-жөніңіз"
+      >
+
+
+      <input
+        required
+        type="tel"
+        placeholder="Телефон нөмірі"
+      >
+
+
+      <select required>
+
+        <option value="">
+          Залды таңдаңыз
+        </option>
+
+        <option>
+          Негізгі зал
+        </option>
+
+        <option>
+          Кіреберіс
+        </option>
+
+        <option>
+          Сахна
+        </option>
+
+      </select>
+
+
+      <input
+        required
+        type="date"
+      >
+
+
+      <textarea
+        rows="3"
+        placeholder="Қосымша ақпарат"
+      ></textarea>
+
+
+      <button
+        class="btn"
+        type="submit"
+      >
+        Өтінім жіберу →
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const modal =
+  document.getElementById('modal');
+
+
+function openModal(){
+
+  modal.classList.add('open');
+
+}
+function closeModal(){
+
+  modal.classList.remove('open');
+
+}
+
+
+modal.addEventListener(
+  'click',
+  function(e){
+
+    if(e.target === modal){
+
+      closeModal();
+
+    }
+
+  }
+);
+
+
+function submitForm(e){
+
+  e.preventDefault();
+
+  alert(
+    'Рақмет! Өтініміңіз қабылданды. ' +
+    'Біз сізбен жақын арада хабарласамыз.'
+  );
+
+  closeModal();
+
+  e.target.reset();
+
+}
+
+</script>
+
+</body>
+</html>
